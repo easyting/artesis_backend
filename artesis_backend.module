@@ -4,10 +4,6 @@
  * Artesis Backend main module file.
  */
 
-function artesis_backend_init() {
-
-}
-
 /**
  * Implements hook_permission().
  */
