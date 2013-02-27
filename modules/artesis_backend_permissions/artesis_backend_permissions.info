@@ -1,0 +1,12 @@
+name = Artesis Backend Permissions
+description = Permissions export for custom backend functionality
+core = 7.x
+package = Artesis
+version = 7.x-0.1
+project = artesis_backend_permissions
+dependencies[] = artesis_backend
+dependencies[] = features
+features[features_api][] = api:1
+features[user_permission][] = alter color scheme
+features[user_permission][] = change alpha settings
+features[user_permission][] = change common theme settings

@@ -1,0 +1,20 @@
+<?php
+/**
+ * @file
+ * Module enable/disable actions.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * We need this so hooks from this module are called later than
+ * the majority of other modules.
+ */
+function artesis_backend_install() {
+  db_update('system')
+  ->fields(array(
+    'weight' => 10,
+  ))
+  ->condition('filename', 'profiles/artesis/modules/artesis_backend/artesis_backend.module', '=')
+  ->execute();
+}
