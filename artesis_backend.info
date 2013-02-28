@@ -1,5 +1,5 @@
 name = Artesis Backend
 description = Custom artesis admin-related functionality
 package = Artesis
-version = 7.x-0.1
+version = 7.x-1.9.4
 core = 7.x
