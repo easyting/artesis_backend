@@ -96,3 +96,38 @@ function artesis_backend_form_system_theme_settings_alter(&$form, &$form_state) 
     }
   }
 }
+
+/**
+ * Refresh the login box via AJAX.
+ *
+ * @return Array
+ *   Set of AJAX commands.
+ */
+function artesis_backend_refresh_login() {
+  drupal_add_js(drupal_get_path('module', 'artesis_backend') . '/js/artesis_backend.scripts.js', 'file');
+  // Get the login block related pieces and update the area via AJAX cmd's.
+  $commands = array();
+  $blocks = array();
+
+  $blocks['ding_username'] = block_load('ding_user_frontend', 'ding-username');
+  $blocks['ding_user_loan_number'] = block_load('ding_user_frontend', 'ding-user-loan-number');
+  $blocks['user_menu'] = block_load('system', 'user-menu');
+
+  $commands[] = ajax_command_invoke('.region-user-second-inner', 'html', array(render(_block_get_renderable_array(_block_render_blocks($blocks)))));
+  $commands[] = ajax_command_artesis_backend_update_login();
+
+  return $commands;
+}
+
+/**
+ * Defines a custom AJAX command to fire necessary logic upon the login
+ * block.
+ *
+ * @return Array
+ *   AJAX-related custom command.
+ */
+function ajax_command_artesis_backend_update_login() {
+  return array(
+    'command' => 'artesis_backend_update_login',
+  );
+}
