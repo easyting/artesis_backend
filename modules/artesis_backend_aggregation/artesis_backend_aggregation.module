@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Artesis Backend Aggregation feature.
+ */
+
+include_once 'artesis_backend_aggregation.features.inc';
