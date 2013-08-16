@@ -98,7 +98,7 @@ function artesis_backend_aggregation_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advagg_js_compress_packer';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['advagg_js_compress_packer'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -119,7 +119,7 @@ function artesis_backend_aggregation_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advagg_js_inline_compress_if_not_cacheable';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['advagg_js_inline_compress_if_not_cacheable'] = $strongarm;
 
   $strongarm = new stdClass();
