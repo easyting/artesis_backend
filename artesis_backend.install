@@ -18,3 +18,10 @@ function artesis_backend_install() {
     ->condition('filename', 'profiles/artesis/modules/artesis_backend/artesis_backend.module', '=')
     ->execute();
 }
+
+/**
+ * Enable aggregation module.
+ */
+function artesis_backend_update_7000() {
+  module_enable(array('artesis_backend_aggregation'), TRUE);
+}
