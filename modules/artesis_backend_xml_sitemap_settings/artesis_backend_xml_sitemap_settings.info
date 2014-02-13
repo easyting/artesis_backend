@@ -1,7 +1,7 @@
 name = Artesis Backend XML Sitemap Settings
 description = XML Sitemap module settings
 core = 7.x
-package = Features
+package = Artesis
 dependencies[] = strongarm
 dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_custom
