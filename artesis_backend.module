@@ -16,12 +16,15 @@ function artesis_backend_refresh_login() {
   $commands = array();
   $blocks = array();
 
-  $blocks['ding_username'] = block_load('ding_user_frontend', 'ding-username');
-  $blocks['ding_user_loan_number'] = block_load('ding_user_frontend', 'ding-user-loan-number');
-  $blocks['user_menu'] = block_load('system', 'user-menu');
-
   if (user_is_logged_in()) {
-    $commands[] = ajax_command_invoke('.region-user-second-inner', 'html', array(render(_block_get_renderable_array(_block_render_blocks($blocks)))));
+    $blocks['ding_username'] = block_load('ding_user_frontend', 'ding-username');
+    $blocks['ding_user_loan_number'] = block_load('ding_user_frontend', 'ding-user-loan-number');
+    $blocks['user_menu'] = block_load('system', 'user-menu');
+
+    $blocks_render = _block_get_renderable_array(_block_render_blocks($blocks));
+    $html = render($blocks_render);
+
+    $commands[] = ajax_command_html('.region-user-second-inner', $html);
     $commands[] = ajax_command_artesis_backend_update_login();
   }
 
