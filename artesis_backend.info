@@ -4,3 +4,4 @@ package = Artesis
 version = 7.x-1.15
 core = 7.x
 dependencies[] = artesis_backend_aggregation
+dependencies[] = artesis_backend_xml_sitemap_settings

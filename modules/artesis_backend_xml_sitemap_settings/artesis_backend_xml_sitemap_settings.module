@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Artesis Backend XML Sitemap Settings feature.
+ */
+
+include_once 'artesis_backend_xml_sitemap_settings.features.inc';
